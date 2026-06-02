@@ -26,10 +26,9 @@ body {
     align-items: center;
     padding: 50px 20px;
     overflow-x: hidden;
-    position: relative;
 }
 
-/* HEART BG */
+/* HEART BACKGROUND */
 .heart-bg {
     position: fixed;
     width: 100%;
@@ -65,7 +64,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    cursor: pointer;
 }
 
 .envelope-card {
@@ -74,16 +72,14 @@ body {
     padding: 40px 50px;
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
     animation: floatEnvelope 2s ease-in-out infinite;
 }
 
 .envelope-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     color: #7a6267;
-    margin-top: 12px;
-    font-weight: 600;
 }
 
 @keyframes floatEnvelope {
@@ -97,11 +93,10 @@ body {
 
 @keyframes crackOpen {
     0% { transform: scale(1) rotate(0); }
-    50% { transform: scale(1.2) rotate(10deg); }
     100% { transform: scale(0) rotate(-10deg); opacity: 0; }
 }
 
-/* LETTER */
+/* LETTER FIXED (NO BLOCKING) */
 #letter {
     position: fixed;
     width: 100%;
@@ -109,7 +104,13 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9998;
+    z-index: 1500; /* 🔥 LOWER THAN OVERLAY */
+    pointer-events: none; /* 🔥 IMPORTANT FIX */
+}
+
+#letter.show {
+    display: flex;
+    pointer-events: auto;
 }
 
 .letter-card {
@@ -118,6 +119,7 @@ body {
     border-radius:20px;
     max-width:400px;
     text-align:center;
+    pointer-events: auto;
 }
 
 /* MAIN CONTAINER */
@@ -129,11 +131,11 @@ body {
     max-width: 440px;
     width: 100%;
     text-align: center;
-    z-index: 2;
     position: relative;
+    z-index: 2;
 }
 
-/* GAME (UNCHANGED LOGIC) */
+/* LOVE GAME (UNCHANGED) */
 .game-box {
     background: rgba(255, 245, 247, 0.7);
     border: 2px dashed #e5a4b6;
@@ -161,7 +163,6 @@ body {
 .click-target {
     font-size: 5rem;
     cursor: pointer;
-    user-select: none;
 }
 
 .burst-heart-particle {
@@ -175,18 +176,12 @@ body {
     0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
     100% { transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.1) rotate(var(--r)); opacity: 0; }
 }
-
-/* SAFE REMOVE OVERLAY */
-.envelope-overlay.hidden {
-    display: none !important;
-    pointer-events: none !important;
-}
 </style>
 </head>
 
 <body>
 
-<!-- HEART BACKGROUND -->
+<!-- HEART BG -->
 <div class="heart-bg">
     <div class="roaming-heart" style="left: 3%; animation-duration: 6s;">💛</div>
     <div class="roaming-heart" style="left: 8%; animation-duration: 9s;">❤️</div>
@@ -212,10 +207,9 @@ body {
 <div class="container">
 
     <h1>My Letter For You... ✨</h1>
-
     <p>Happy 33rd monthsary 💕</p>
 
-    <!-- LOVE GAME (UNCHANGED) -->
+    <!-- LOVE GAME -->
     <div class="game-box" id="gameArea">
         <div id="gameHeader">SPAM FOR 33 MONTHS IF U LOVE ME 💛❤️</div>
 
@@ -248,13 +242,8 @@ heart.addEventListener("click", function(e) {
     if (clicks < totalNeeded) {
         clicks++;
 
-        let percentage = (clicks / totalNeeded) * 100;
-        fill.style.width = percentage + "%";
-
+        fill.style.width = (clicks / totalNeeded) * 100 + "%";
         text.innerText = "Clicks needed: " + (totalNeeded - clicks);
-
-        heart.style.transform = "scale(1.2)";
-        setTimeout(() => heart.style.transform = "scale(1)", 80);
 
         for (let i = 0; i < 5; i++) {
             const particle = document.createElement("div");
@@ -262,11 +251,9 @@ heart.addEventListener("click", function(e) {
             particle.innerText = Math.random() > 0.5 ? "❤️" : "💛";
 
             const rect = gameArea.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            particle.style.left = (e.clientX - rect.left) + "px";
+            particle.style.top = (e.clientY - rect.top) + "px";
 
-            particle.style.left = x + "px";
-            particle.style.top = y + "px";
             particle.style.setProperty("--x", ((Math.random() - 0.5) * 160) + "px");
             particle.style.setProperty("--y", ((Math.random() - 0.5) * 160) + "px");
             particle.style.setProperty("--r", (Math.random() * 360) + "deg");
@@ -283,7 +270,7 @@ heart.addEventListener("click", function(e) {
     }
 });
 
-/* ENVELOPE FIX (IMPORTANT) */
+/* ENVELOPE FIX */
 const envelope = document.getElementById("openEnvelope");
 const overlay = document.getElementById("envelopeOverlay");
 const letter = document.getElementById("letter");
@@ -293,8 +280,8 @@ envelope.addEventListener("click", function () {
     envelope.classList.add("crack");
 
     setTimeout(() => {
-        overlay.classList.add("hidden"); // 🔥 FIXED PROPERLY
-        letter.style.display = "flex";
+        overlay.style.display = "none";
+        letter.classList.add("show"); // 🔥 FIXED PROPERLY
         music.play().catch(() => {});
     }, 600);
 });
