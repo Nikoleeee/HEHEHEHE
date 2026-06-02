@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Page 2 ❤️</title>
+    <!-- Google Fonts synchronized with Page 1 -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Allowing page 2 to handle long letter scrolling smoothly */
+        body {
+            min-height: 100vh;
+            height: auto;
+            padding: 50px 20px;
+        }
+        
+        /* Clean letter body layout format */
+        .letter-text {
+            font-family: 'Poppins', sans-serif;
+            color: #594549;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            text-align: left;
+            margin-bottom: 30px;
+            white-space: pre-line; /* Preserves your message line breaks */
+            padding: 0 10px;
+        }
 
+        /* --- Mini Game: Love Meter Panel Setup --- */
+        .game-box {
+            background: rgba(255, 245, 247, 0.6);
+            border: 2px dashed #e5a4b6;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .game-title {
+            font-family: 'Poppins', sans-serif;
+            color: #7a6267;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #eee5e7;
+            height: 12px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #e5a4b6, #e07b93);
+            border-radius: 10px;
+            transition: width 0.2s ease;
+        }
+
+        /* Interactive Clicker Heart Engine */
+        .click-target {
+            font-size: 2.8rem;
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px 0;
+            user-select: none;
+            transition: transform 0.1s ease;
+        }
+        .click-target:active { transform: scale(0.85); }
+
+        .counter-status {
+            font-family: 'Poppins', sans-serif;
+            color: #8c7378;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Target hidden button section layout */
+        .hidden-btn-wrapper {
+            display: none; /* Stays invisible until the meter reaches 100% */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            animation: scaleUpCard 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heavily packed dense floating heart layout -->
+    <div class="heart-bg">
+        <div class="roaming-heart" style="left: 3%; animation-duration: 6s; animation-delay: 0s;">💛</div>
+        <div class="roaming-heart" style="left: 8%; animation-duration: 9s; animation-delay: 3s;">❤️</div>
+        <div class="roaming-heart" style="left: 14%; animation-duration: 7s; animation-delay: 1s;">💛</div>
+        <div class="roaming-heart" style="left: 20%; animation-duration: 11s; animation-delay: 4.5s;">❤️</div>
+        <div class="roaming-heart" style="left: 25%; animation-duration: 8s; animation-delay: 2s;">💛</div>
+        <div class="roaming-heart" style="left: 31%; animation-duration: 10s; animation-delay: 0.5s;">❤️</div>
+        <div class="roaming-heart" style="left: 37%; animation-duration: 6.5s; animation-delay: 5s;">💛</div>
+        <div class="roaming-heart" style="left: 42%; animation-duration: 12s; animation-delay: 1.5s;">❤️</div>
+        <div class="roaming-heart" style="left: 48%; animation-duration: 9s; animation-delay: 3.5s;">💛</div>
+        <div class="roaming-heart" style="left: 54%; animation-duration: 7.5s; animation-delay: 0.2s;">❤️</div>
+        <div class="roaming-heart" style="left: 60%; animation-duration: 11s; animation-delay: 6s;">💛</div>
+        <div class="roaming-heart" style="left: 65%; animation-duration: 8.5s; animation-delay: 2.2s;">❤️</div>
+        <div class="roaming-heart" style="left: 71%; animation-duration: 10s; animation-delay: 4s;">💛</div>
+        <div class="roaming-heart" style="left: 76%; animation-duration: 7s; animation-delay: 1.2s;">❤️</div>
+        <div class="roaming-heart" style="left: 82%; animation-duration: 12s; animation-delay: 5.5s;">💛</div>
+        <div class="roaming-heart" style="left: 87%; animation-duration: 9.5s; animation-delay: 0s;">❤️</div>
+        <div class="roaming-heart" style="left: 92%; animation-duration: 8s; animation-delay: 3.8s;">💛</div>
+        <div class="roaming-heart" style="left: 96%; animation-duration: 10.5s; animation-delay: 2.5s;">❤️</div>
+    </div>
+
+    <!-- The Soft Paper Box Container centered on screen -->
+    <div class="container">
+        <!-- Aesthetic ribbon bow element -->
+        <div class="ribbon-bow">
+            <div class="loop-left"></div>
+            <div class="loop-right"></div>
+            <div class="knot"></div>
+        </div>
+
+        <!-- Handwritten Dancing Script Heading -->
+        <h1 class="cursive-heading">My Letter For You... ✨</h1>
+        
+        <!-- 📝 PASTE YOUR DEEP PARAGRAPH TEXT DIRECTLY INSIDE THIS TAG -->
+        <p class="letter-text">To my favorite person, Happy 33rd monthsary! 
+
+I want to take this page to tell you how incredibly grateful I am to have you in my life. Thank you for making me happy, for being my safe space, and for staying by my side through everything. 
+
+Every single day with you is a beautiful dream come true, and I look forward to making even more memories together. I love you to the moon and back! 💕</p>
+
+        <!-- The Love Meter Mini-Game Segment -->
+        <div class="game-box">
+            <h3 class="game-title" id="gameHeader">Spam click the heart to load my love for you! 💕</h3>
+            <div class="progress-bar"><div class="progress-fill" id="loveFill"></div></div>
+            <div class="click-target" id="heartTarget">❤️</div>
+            <p class="counter-status" id="clickCount">Clicks needed: 15</p>
+            
+            <!-- Big Dog Head Button pops up at the exact same location when done -->
+            <div class="hidden-btn-wrapper" id="nextPageWrapper">
+                <a href="page3.html" class="circular-dog-btn">🐶</a>
+                <span class="btn-label">Next Page</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mini-Game Mechanics Execution Block -->
+    <script>
+        let clicks = 0;
+        const totalNeeded = 15; // Requires 15 clicks to unlock the gate button
+        const heart = document.getElementById('heartTarget');
+        const fill = document.getElementById('loveFill');
+        const text = document.getElementById('clickCount');
+        const header = document.getElementById('gameHeader');
+        const nextWrapper = document.getElementById('nextPageWrapper');
+
+        heart.addEventListener('click', function() {
+            if (clicks < totalNeeded) {
+                clicks++;
+                let percentage = (clicks / totalNeeded) * 100;
+                fill.style.width = percentage + '%';
+                text.innerText = `Clicks needed: ${totalNeeded - clicks}`;
+                
+                if (clicks === totalNeeded) {
+                    header.innerText = "Love fully loaded! 🎉";
+                    text.innerText = "Yay! You unlocked the next step!";
+                    heart.style.display = "none";
+                    nextWrapper.style.display = "flex"; // Shows your large 🐶 button system cleanly
+                }
+            }
+        });
+    </script>
+</body>
+</html>
