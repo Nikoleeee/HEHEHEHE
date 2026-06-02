@@ -1,25 +1,22 @@
-/* Core Layout Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
-/* Base Canvas Styling */
 body {
     height: 100vh;
     width: 100%;
-    background-color: #fff0f5; /* Cozy pastel blush pink */
+    background-color: #fff0f5; 
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     overflow: hidden;
     position: relative;
+    font-family: 'Pangolin', cursive;
 }
 
-/* Main Minimal Love Card Container */
 .container {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
@@ -35,7 +32,6 @@ body {
     animation: scaleUpCard 1s ease-out forwards;
 }
 
-/* Header Graphic Container */
 .avatar-container {
     margin-bottom: 20px;
     width: 100%; 
@@ -49,28 +45,28 @@ body {
     object-fit: contain;
 }
 
-/* Aesthetic Cursive Heading (Same color throughout) */
 h1 {
-    font-family: 'Playball', cursive;
-    color: #c74d6e; /* Sweet, solid raspberry rose color */
-    font-size: 2.7rem;
-    line-height: 1.2;
+    font-family: 'Fredoka', sans-serif;
+    color: #c74d6e; 
+    font-size: 2.3rem;
+    line-height: 1.3;
     margin-bottom: 20px;
-    font-weight: normal;
+    font-weight: 700;
 }
 
-/* Expressive Bold Body Message */
+/* Customized Message: Uses Pangolin, Forced All Caps, Extra Bold Vibe */
 .message {
-    color: #4a3b3e;
-    font-size: 1.15rem;
+    font-family: 'Pangolin', cursive;
+    color: #3b2d30;
+    font-size: 1.25rem; /* Increased size to make handwriting pop */
     line-height: 1.6;
     margin-bottom: 30px;
-    font-weight: 600; /* Bolded weight for extra emphasis */
-    letter-spacing: -0.2px;
+    font-weight: bold; 
+    text-transform: uppercase; /* Automatically forces ALL CAPITAL LETTERS */
+    letter-spacing: 0.5px;
     padding: 0 5px;
 }
 
-/* Romantic Call to Action Button */
 .btn {
     display: inline-block;
     background: #e07b93;
@@ -78,7 +74,8 @@ h1 {
     text-decoration: none;
     padding: 14px 35px;
     border-radius: 50px;
-    font-weight: 600;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.5px;
     box-shadow: 0 8px 20px rgba(224, 123, 147, 0.4);
@@ -91,7 +88,7 @@ h1 {
     box-shadow: 0 12px 25px rgba(224, 123, 147, 0.5);
 }
 
-/* --- Highly Visible Floating Hearts System --- */
+/* --- Heavily Visible Floating Hearts --- */
 .heart-bg {
     position: absolute;
     width: 100%;
@@ -105,25 +102,24 @@ h1 {
 .roaming-heart {
     position: absolute;
     bottom: -10%;
-    font-size: 24px; /* Increased size to make them highly visible */
+    font-size: 28px; /* Bigger presence */
     opacity: 0;
     animation: scrollHeartsUp linear infinite;
 }
 
-/* Roaming Motion Script */
 @keyframes scrollHeartsUp {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg);
         opacity: 0;
     }
     10% {
-        opacity: 0.75; /* Highly visible roaming density */
+        opacity: 0.9; /* Bright and beautiful visible opacity */
     }
     90% {
-        opacity: 0.75;
+        opacity: 0.9;
     }
     100% {
-        transform: translateY(-115vh) translateX(60px) rotate(35deg);
+        transform: translateY(-115vh) translateX(80px) rotate(45deg);
         opacity: 0;
     }
 }
