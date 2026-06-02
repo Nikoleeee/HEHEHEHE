@@ -17,29 +17,17 @@ body {
     padding: 20px;
     overflow: hidden;
     position: relative;
-    font-family: 'Pangolin', cursive;
 }
 
-/* Soft Paper Aesthetic Card Container Box */
-.container.paper-box {
-    /* Uses a textured off-white warm paper tone */
-    background-color: #faf8f5;
-    /* Soft noise pattern simulation overlay to look like heavy fiber paper cardstock */
-    background-image: radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0);
-    background-size: 4px 4px;
-    
-    padding: 35px 25px;
-    border-radius: 12px; /* Less rounded corner for a traditional postcard/paper feel */
-    /* Double layered shadows to mimic thick deckled artistic paper resting on top of a surface */
-    box-shadow: 
-        0 1px 3px rgba(0,0,0,0.05),
-        0 10px 30px rgba(90, 70, 75, 0.12),
-        inset 0 0 40px rgba(255,255,255,0.6);
-    
+/* Custom Soft Paper Card Container Styling */
+.container {
+    background: #fffaf7;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 30px;
     max-width: 420px;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(230, 225, 220, 0.8);
     z-index: 5;
     animation: scaleUpCard 1s ease-out forwards;
 }
@@ -53,32 +41,31 @@ body {
     width: 100%;
     max-width: 380px; 
     height: auto;
-    border-radius: 8px; /* Matching the structural clean edge lines of raw paper cardstock */
+    border-radius: 12px;
     object-fit: contain;
 }
 
-/* Beautiful Allura Cursive Script Styling (Scaled down proportionally) */
-h1.cursive-heading {
-    font-family: 'Allura', cursive;
-    color: #b33b58; /* Muted, artistic matte crimson rose tone */
-    font-size: 2.8rem; /* Scaled down significantly so it is not too big on the screen */
+/* Beautiful Handwritten Cursive Font Applied Here */
+.cursive-heading {
+    font-family: 'Dancing Script', cursive;
+    color: #b33b58; /* Matte crimson rose tone */
+    font-size: 2.5rem; /* Balanced size so it's not too big on the screen */
     line-height: 1.2;
     margin-bottom: 15px;
-    font-weight: normal;
-    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
-/* Perfected mini, non-bold capital text presentation block */
+/* Clean, unbolded small message formatted in Poppins */
 .message {
-    font-family: 'Pangolin', cursive;
+    font-family: 'Poppins', sans-serif;
     color: #594549; 
-    font-size: 0.85rem; 
-    line-height: 1.5;
+    font-size: 0.82rem; /* Small and delicate */
+    line-height: 1.6;
     margin-bottom: 25px;
-    font-weight: normal; 
+    font-weight: 400; /* Smooth, normal thickness (not bold) */
     text-transform: uppercase; 
     letter-spacing: 0.8px;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 /* Layout stack: alignment system for dog node configuration */
@@ -120,10 +107,10 @@ h1.cursive-heading {
 
 /* Small labels sitting beneath the button module */
 .btn-label {
-    font-family: 'Pangolin', cursive;
+    font-family: 'Poppins', sans-serif;
     color: #7a6267;
-    font-size: 0.78rem;
-    font-weight: normal;
+    font-size: 0.75rem;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
