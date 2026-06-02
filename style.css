@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     width: 100%;
-    /* Updated background with a high resolution soft pastel gradient pink sky image */
+    /* High resolution pastel gradient pink sky image backdrop */
     background-image: url('https://unsplash.com');
     background-size: cover;
     background-position: center;
@@ -19,17 +19,61 @@ body {
     position: relative;
 }
 
-/* Custom Paper Card Container Setup */
+/* Container Setup */
 .container {
     background: #fffaf7;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 30px;
+    padding: 45px 30px 30px 30px; /* Added extra top padding to give the bow breathing room */
     max-width: 420px;
     width: 100%;
     text-align: center;
     z-index: 5;
+    position: relative; /* Necessary to position the ribbon on top edge */
     animation: scaleUpCard 1s ease-out forwards;
+}
+
+/* --- Aesthetic Ribbon Bow Setup --- */
+.ribbon-bow {
+    position: absolute;
+    top: -15px; /* Positions it halfway off the top edge */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    z-index: 10;
+}
+
+.knot {
+    position: absolute;
+    top: 5px;
+    left: 31px;
+    width: 18px;
+    height: 18px;
+    background-color: #e5a4b6; /* Soft pastel pink ribbon color */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loop-left, .loop-right {
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 26px;
+    border: 6px solid #e5a4b6;
+    border-radius: 50% 50% 40% 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.loop-left {
+    left: 4px;
+    transform: rotate(-15deg);
+}
+
+.loop-right {
+    right: 4px;
+    border-radius: 50% 50% 50% 40%;
+    transform: rotate(15deg);
 }
 
 .avatar-container {
@@ -45,7 +89,7 @@ body {
     object-fit: contain;
 }
 
-/* Handwritten Cursive Font Applied Here */
+/* Handwritten Cursive Font */
 .cursive-heading {
     font-family: 'Dancing Script', cursive;
     color: #b33b58; /* Matte crimson rose tone */
