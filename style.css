@@ -7,8 +7,8 @@
 body {
     height: 100vh;
     width: 100%;
-    /* High resolution textured matte watercolor cardstock paper backdrop layout */
-    background-image: linear-gradient(rgba(255, 242, 246, 0.4), rgba(255, 242, 246, 0.4)), url('https://unsplash.com');
+    /* Updated background with a high resolution soft pastel gradient pink sky image */
+    background-image: url('https://unsplash.com');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -24,59 +24,14 @@ body {
     background: #fffaf7;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 45px 30px 30px 30px; /* Added extra top padding so the image doesn't touch the bow */
+    padding: 30px;
     max-width: 420px;
     width: 100%;
     text-align: center;
     z-index: 5;
-    position: relative; /* Crucial to anchor the bow ribbon on top */
     animation: scaleUpCard 1s ease-out forwards;
 }
 
-/* --- Aesthetic Ribbon Bow Styling --- */
-.ribbon-bow {
-    position: absolute;
-    top: -15px; /* Floats perfectly halfway off the top edge */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 30px;
-    z-index: 10;
-}
-
-.knot {
-    position: absolute;
-    top: 5px;
-    left: 31px;
-    width: 18px;
-    height: 18px;
-    background-color: #e5a4b6; /* Soft pastel pink ribbon color */
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.loop-left, .loop-right {
-    position: absolute;
-    top: 0;
-    width: 35px;
-    height: 26px;
-    border: 6px solid #e5a4b6;
-    border-radius: 50% 50% 40% 50%;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-}
-
-.loop-left {
-    left: 4px;
-    transform: rotate(-15deg);
-}
-
-.loop-right {
-    right: 4px;
-    border-radius: 50% 50% 50% 40%;
-    transform: rotate(15deg);
-}
-
-/* --- Content Layout Elements --- */
 .avatar-container {
     margin-bottom: 18px;
     width: 100%; 
@@ -93,8 +48,8 @@ body {
 /* Handwritten Cursive Font Applied Here */
 .cursive-heading {
     font-family: 'Dancing Script', cursive;
-    color: #b33b58; 
-    font-size: 2.5rem; 
+    color: #b33b58; /* Matte crimson rose tone */
+    font-size: 2.5rem; /* Balanced size so it's not too big on the screen */
     line-height: 1.2;
     margin-bottom: 15px;
     font-weight: 600;
@@ -104,10 +59,10 @@ body {
 .message {
     font-family: 'Poppins', sans-serif;
     color: #594549; 
-    font-size: 0.82rem; 
+    font-size: 0.82rem; /* Small and delicate */
     line-height: 1.6;
     margin-bottom: 25px;
-    font-weight: 400; 
+    font-weight: 400; /* Smooth, normal thickness (not bold) */
     text-transform: uppercase; 
     letter-spacing: 0.8px;
     padding: 0 10px;
@@ -141,7 +96,7 @@ body {
 
 /* Playful head-tilt bounce on mouse over */
 .circular-dog-btn:hover {
-    background: #d15c77;
+    background: #d15771;
     transform: translateY(-4px) scale(1.08) rotate(-15deg);
     box-shadow: 0 10px 20px rgba(224, 123, 147, 0.45);
 }
