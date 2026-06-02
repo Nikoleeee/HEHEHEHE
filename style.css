@@ -7,8 +7,8 @@
 body {
     height: 100vh;
     width: 100%;
-    /* Pulls directly from your uploaded bg.jpg with a slight romantic overlay */
-    background-image: linear-gradient(rgba(255, 240, 245, 0.25), rgba(255, 240, 245, 0.25)), url('bg.jpg');
+    /* High resolution textured matte watercolor cardstock paper backdrop layout */
+    background-image: linear-gradient(rgba(255, 242, 246, 0.4), rgba(255, 242, 246, 0.4)), url('https://unsplash.com');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -19,7 +19,7 @@ body {
     position: relative;
 }
 
-/* Custom Soft Paper Card Container Styling */
+/* Custom Paper Card Container Setup */
 .container {
     background: #fffaf7;
     border-radius: 20px;
@@ -45,7 +45,7 @@ body {
     object-fit: contain;
 }
 
-/* Beautiful Handwritten Cursive Font Applied Here */
+/* Handwritten Cursive Font Applied Here */
 .cursive-heading {
     font-family: 'Dancing Script', cursive;
     color: #b33b58; /* Matte crimson rose tone */
