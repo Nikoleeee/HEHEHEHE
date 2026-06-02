@@ -1,240 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story - Page 2 ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Page 2 ❤️</title>
 
-<link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    min-height: 100vh;
-    width: 100%;
-    background-image: url('sky-bg.jpg') !important;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    overflow-x: hidden;
-    position: relative;
-    z-index: 1;
-}
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background-image: url('sky-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-/* ENVELOPE */
-.envelope-wrapper {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background-color: #fce4ec;
-    border-radius: 12px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    cursor: pointer;
-}
+        .container {
+            background: #fffaf7;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 45px 30px 30px 30px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            z-index: 5;
+            position: relative;
+            animation: scaleUpCard 1s ease-out forwards;
+        }
 
-/* MODAL */
-.modal-overlay {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.4);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:100;
-}
+        .ribbon-bow {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 30px;
+            z-index: 10;
+        }
 
-.modal-box {
-    background:#fffaf7;
-    padding:25px;
-    border-radius:16px;
-    text-align:center;
-}
+        .knot {
+            position: absolute;
+            top: 5px;
+            left: 31px;
+            width: 18px;
+            height: 18px;
+            background-color: #e5a4b6;
+            border-radius: 4px;
+        }
 
-/* MUSIC */
-.music-player {
-    display:none;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 20px;
-    z-index: 90;
-}
+        .loop-left, .loop-right {
+            position: absolute;
+            top: 0;
+            width: 35px;
+            height: 26px;
+            border: 6px solid #e5a4b6;
+            border-radius: 50% 50% 40% 50%;
+        }
 
-/* WORKSPACE */
-.main-workspace {
-    display:none;
-    flex-direction: row;
-    gap: 30px;
-}
+        .loop-left { left: 4px; transform: rotate(-15deg); }
+        .loop-right { right: 4px; border-radius: 50% 50% 50% 40%; transform: rotate(15deg); }
 
-/* LETTER */
-.container {
-    background:#fffaf7;
-    padding:40px;
-    border-radius:20px;
-    max-width:440px;
-    text-align:center;
-}
+        .cursive-heading {
+            font-family: 'Dancing Script', cursive;
+            color: #b33b58;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-/* LOVE GAME */
-.game-box {
-    background: rgba(255,245,247,0.7);
-    border: 2px dashed #e5a4b6;
-    padding:20px;
-    border-radius:16px;
-}
+        .letter-text {
+            font-family: 'Poppins', sans-serif;
+            color: #594549;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 30px;
+            white-space: pre-line;
+            padding: 0 5px;
+        }
 
-.progress-bar {
-    width:100%;
-    height:12px;
-    background:#eee5e7;
-    border-radius:10px;
-    overflow:hidden;
-}
+        .game-box {
+            background: rgba(255, 245, 247, 0.7);
+            border: 2px dashed #e5a4b6;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 25px;
+            position: relative;
+        }
 
-.progress-fill {
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,#e5a4b6,#e07b93);
-}
+        .game-title {
+            font-family: 'Poppins', sans-serif;
+            color: #7a6267;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-.click-target {
-    font-size:3rem;
-    cursor:pointer;
-}
+        .progress-bar {
+            width: 100%;
+            background: #eee5e7;
+            height: 12px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
 
-.burst-heart-particle {
-    position:absolute;
-    animation: float 0.6s ease forwards;
-}
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #e5a4b6, #e07b93);
+            transition: width 0.1s ease;
+        }
 
-@keyframes float {
-    0% { transform:scale(0.3); opacity:1; }
-    100% { transform:translateY(-100px); opacity:0; }
-}
-</style>
+        .click-target {
+            font-size: 3.2rem;
+            cursor: pointer;
+            user-select: none;
+            display: inline-block;
+            margin: 5px 0;
+            transition: transform 0.1s ease;
+        }
+
+        .counter-status {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            color: #8c7378;
+        }
+
+        .hidden-btn-wrapper {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .circular-dog-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 75px;
+            background: #e07b93;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        .burst-heart-particle {
+            position: absolute;
+            pointer-events: none;
+            font-size: 20px;
+            animation: shootOutAndFade 0.6s ease-out forwards;
+        }
+
+        @keyframes shootOutAndFade {
+            0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+            100% {
+                transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.1) rotate(var(--r));
+                opacity: 0;
+            }
+        }
+
+        .heart-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .roaming-heart {
+            position: absolute;
+            bottom: -10%;
+            font-size: 32px;
+            animation: scrollHeartsUp linear infinite;
+        }
+
+        @keyframes scrollHeartsUp {
+            0% { transform: translateY(0); opacity: 0; }
+            100% { transform: translateY(-115vh); opacity: 0; }
+        }
+
+        @keyframes scaleUpCard {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ENVELOPE -->
-<div id="envelope" class="envelope-wrapper"></div>
+<div class="heart-bg">
+    <div class="roaming-heart" style="left: 3%; animation-duration: 6s;">💛</div>
+    <div class="roaming-heart" style="left: 8%; animation-duration: 9s;">❤️</div>
+</div>
 
-<!-- MODAL -->
-<div id="modal" class="modal-overlay">
-    <div class="modal-box">
-        <h2>Reminder 💖</h2>
-        <button id="modalCloseBtn">Open</button>
+<div class="container">
+
+    <div class="ribbon-bow">
+        <div class="loop-left"></div>
+        <div class="loop-right"></div>
+        <div class="knot"></div>
     </div>
-</div>
 
-<!-- MUSIC -->
-<div id="playerWidget" class="music-player">
-    <button id="playBtn">▶</button>
-    <span id="trackStatus">Paused</span>
-</div>
+    <h1 class="cursive-heading">My Letter For You... ✨</h1>
 
-<audio id="loveSong" loop>
-    <source src="love.mp3" type="audio/mpeg">
-</audio>
+    <p class="letter-text">
+To my favorite person, Happy 33rd monthsary! I want to take this page to tell you how incredibly grateful I am to have you in my life. Thank you for making me happy, for being my safe space, and for staying by my side through everything. Every single day with you is a beautiful dream come true, and I look forward to making even more memories together. I love you to the moon and back! 💕 SPAM FOR 33 MONTHS IF U LOVE ME hihi 💛❤️
+    </p>
 
-<!-- WORKSPACE -->
-<div id="workspace" class="main-workspace">
+    <div class="game-box" id="gameArea">
 
-    <!-- LETTER -->
-    <div class="container">
+        <div class="game-title" id="gameHeader">
+            SPAM FOR 33 MONTHS IF U LOVE ME hihi 💛❤️
+        </div>
 
-        <h1>My Letter For You... ✨</h1>
+        <div class="progress-bar">
+            <div class="progress-fill" id="loveFill"></div>
+        </div>
 
-        <p>
-To my favorite person, Happy 33rd monthsary! I love you 💕
-        </p>
+        <div class="click-target" id="heartTarget">❤️</div>
 
-        <!-- LOVE METER -->
-        <div class="game-box" id="gameArea">
-
-            <div id="gameHeader">SPAM FOR 33 MONTHS 💛❤️</div>
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="loveFill"></div>
-            </div>
-
-            <div class="click-target" id="heartTarget">❤️</div>
-
-            <div id="clickCount">Clicks needed: 33</div>
-
+        <div class="counter-status" id="clickCount">
+Clicks needed: 33🐶See Our Memories
         </div>
 
     </div>
+
 </div>
 
 <script>
-
 let clicks = 0;
 const totalNeeded = 33;
-
-const envelope = document.getElementById("envelope");
-const modal = document.getElementById("modal");
-const modalCloseBtn = document.getElementById("modalCloseBtn");
-
-const workspace = document.getElementById("workspace");
-const playerWidget = document.getElementById("playerWidget");
-
-const song = document.getElementById("loveSong");
-const playBtn = document.getElementById("playBtn");
-const trackStatus = document.getElementById("trackStatus");
 
 const heart = document.getElementById("heartTarget");
 const fill = document.getElementById("loveFill");
 const text = document.getElementById("clickCount");
+const header = document.getElementById("gameHeader");
 const gameArea = document.getElementById("gameArea");
 
-/* ENVELOPE OPEN */
-envelope.addEventListener("click", function () {
-    modal.style.display = "flex";
-});
-
-/* MODAL OPEN WORKSPACE */
-modalCloseBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-    playerWidget.style.display = "flex";
-    workspace.style.display = "flex";
-});
-
-/* MUSIC */
-playBtn.addEventListener("click", function () {
-    if (song.paused) {
-        song.play();
-        playBtn.innerText = "⏸";
-        trackStatus.innerText = "Playing";
-    } else {
-        song.pause();
-        playBtn.innerText = "▶";
-        trackStatus.innerText = "Paused";
-    }
-});
-
-/* LOVE METER */
-heart.addEventListener("click", function (e) {
+heart.addEventListener("click", function(e) {
     if (clicks < totalNeeded) {
         clicks++;
 
-        fill.style.width = (clicks / totalNeeded) * 100 + "%";
+        let percentage = (clicks / totalNeeded) * 100;
+        fill.style.width = percentage + "%";
+
         text.innerText = "Clicks needed: " + (totalNeeded - clicks);
+
+        heart.style.transform = "scale(1.2)";
+        setTimeout(() => heart.style.transform = "scale(1)", 80);
 
         for (let i = 0; i < 5; i++) {
             const particle = document.createElement("div");
@@ -242,15 +275,27 @@ heart.addEventListener("click", function (e) {
             particle.innerText = Math.random() > 0.5 ? "❤️" : "💛";
 
             const rect = gameArea.getBoundingClientRect();
-            particle.style.left = (e.clientX - rect.left) + "px";
-            particle.style.top = (e.clientY - rect.top) + "px";
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            particle.style.left = x + "px";
+            particle.style.top = y + "px";
+
+            particle.style.setProperty("--x", ((Math.random() - 0.5) * 160) + "px");
+            particle.style.setProperty("--y", ((Math.random() - 0.5) * 160) + "px");
+            particle.style.setProperty("--r", (Math.random() * 360) + "deg");
 
             gameArea.appendChild(particle);
             setTimeout(() => particle.remove(), 600);
         }
+
+        if (clicks === totalNeeded) {
+            header.innerHTML = "LOVE FULLY LOADED! 🎉I LOVE YOU SO MUCH!";
+            text.innerText = "YAY! YOU UNLOCKED OUR GALLERY!";
+            heart.style.display = "none";
+        }
     }
 });
-
 </script>
 
 </body>
