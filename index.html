@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary, My Love! ❤️</title>
+    <!-- Importing Poppins & Playfair Display Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Couple Illustration Placeholder -->
+        <div class="avatar-container">
+            <img src="https://unsplash.com" alt="Love" class="avatar">
+            <span class="floating-heart">❤️</span>
+        </div>
+
+        <h1>Happy Monthsary, <br><span class="highlight">My Love! 💕</span></h1>
+        
+        <p class="message">
+            Every day with you feels like a beautiful dream come true. 
+            Thank you for being my happiness, my peace, and my home.
+        </p>
+        
+        <p class="declaration">I love you so much! 💞</p>
+
+        <!-- Change '#' to your second page link or love letter link later -->
+        <a href="#" class="btn" id="loveBtn">❤️ Click here, love!</a>
+    </div>
+
+    <!-- Optional JavaScript for a fun heart burst effect when clicked -->
+    <script>
+        document.getElementById('loveBtn').addEventListener('click', function(e) {
+            if(this.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert("Happy Monthsary! I love you to the moon and back! 🌙✨");
+            }
+        });
+    </script>
+</body>
+</html>
