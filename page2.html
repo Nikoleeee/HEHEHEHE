@@ -120,7 +120,7 @@ body {
     text-align:center;
 }
 
-/* MAIN */
+/* MAIN CONTAINER */
 .container {
     background: #fffaf7;
     border-radius: 20px;
@@ -133,7 +133,7 @@ body {
     position: relative;
 }
 
-/* LOVE GAME (UNCHANGED LOGIC) */
+/* GAME (UNCHANGED LOGIC) */
 .game-box {
     background: rgba(255, 245, 247, 0.7);
     border: 2px dashed #e5a4b6;
@@ -175,11 +175,18 @@ body {
     0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
     100% { transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.1) rotate(var(--r)); opacity: 0; }
 }
+
+/* SAFE REMOVE OVERLAY */
+.envelope-overlay.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEART BACKGROUND -->
 <div class="heart-bg">
     <div class="roaming-heart" style="left: 3%; animation-duration: 6s;">💛</div>
     <div class="roaming-heart" style="left: 8%; animation-duration: 9s;">❤️</div>
@@ -201,16 +208,14 @@ body {
     </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="container">
 
     <h1>My Letter For You... ✨</h1>
 
-    <p>
-        To my favorite person... Happy 33rd monthsary 💕
-    </p>
+    <p>Happy 33rd monthsary 💕</p>
 
-    <!-- GAME (UNCHANGED) -->
+    <!-- LOVE GAME (UNCHANGED) -->
     <div class="game-box" id="gameArea">
         <div id="gameHeader">SPAM FOR 33 MONTHS IF U LOVE ME 💛❤️</div>
 
@@ -229,6 +234,7 @@ body {
 </audio>
 
 <script>
+
 let clicks = 0;
 const totalNeeded = 33;
 
@@ -246,6 +252,9 @@ heart.addEventListener("click", function(e) {
         fill.style.width = percentage + "%";
 
         text.innerText = "Clicks needed: " + (totalNeeded - clicks);
+
+        heart.style.transform = "scale(1.2)";
+        setTimeout(() => heart.style.transform = "scale(1)", 80);
 
         for (let i = 0; i < 5; i++) {
             const particle = document.createElement("div");
@@ -274,21 +283,22 @@ heart.addEventListener("click", function(e) {
     }
 });
 
-// ENVELOPE FIX
+/* ENVELOPE FIX (IMPORTANT) */
 const envelope = document.getElementById("openEnvelope");
 const overlay = document.getElementById("envelopeOverlay");
 const letter = document.getElementById("letter");
 const music = document.getElementById("bgMusic");
 
-envelope.addEventListener("click", function(e){
+envelope.addEventListener("click", function () {
     envelope.classList.add("crack");
 
-    setTimeout(()=>{
-        overlay.style.display = "none";
+    setTimeout(() => {
+        overlay.classList.add("hidden"); // 🔥 FIXED PROPERLY
         letter.style.display = "flex";
-        music.play().catch(()=>{});
-    },600);
+        music.play().catch(() => {});
+    }, 600);
 });
+
 </script>
 
 </body>
