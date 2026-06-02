@@ -7,7 +7,8 @@
 body {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(255, 240, 245, 0.4), rgba(255, 240, 245, 0.4)), url('https://unsplash.com');
+    /* Points straight to your uploaded file named bg.jpg with a slight pink tint overlay */
+    background-image: linear-gradient(rgba(255, 240, 245, 0.25), rgba(255, 240, 245, 0.25)), url('bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -19,14 +20,15 @@ body {
     font-family: 'Pangolin', cursive;
 }
 
+/* Glassmorphism card block container */
 .container {
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 40px 30px;
+    padding: 35px 25px;
     border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(180, 100, 120, 0.3);
-    max-width: 450px;
+    box-shadow: 0 15px 35px rgba(180, 100, 120, 0.25);
+    max-width: 440px;
     width: 100%;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.9);
@@ -35,76 +37,89 @@ body {
 }
 
 .avatar-container {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     width: 100%; 
 }
 
 .avatar {
     width: 100%;
-    max-width: 390px; 
+    max-width: 380px; 
     height: auto;
     border-radius: 16px; 
     object-fit: contain;
 }
 
-h1 {
-    font-family: 'Fredoka', sans-serif;
+/* Great Vibes Script Cursive Heading */
+h1.cursive-heading {
+    font-family: 'Great Vibes', cursive;
     color: #c74d6e; 
-    font-size: 2.3rem;
-    line-height: 1.3;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 3.4rem; 
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-weight: normal;
 }
 
+/* Small message format under title */
 .message {
     font-family: 'Pangolin', cursive;
-    color: #3b2d30;
-    font-size: 1.25rem; 
-    line-height: 1.6;
-    margin-bottom: 30px;
+    color: #423336;
+    font-size: 0.85rem; 
+    line-height: 1.5;
+    margin-bottom: 25px;
     font-weight: bold; 
     text-transform: uppercase; 
-    letter-spacing: 0.5px;
-    padding: 0 5px;
+    letter-spacing: 0.8px;
+    padding: 0 15px;
 }
 
-/* Re-styled Custom Dog Theme Button Container */
-.btn {
+/* Container to vertically stack text and dog head */
+.dog-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 5px;
+}
+
+/* Small instruction text above dog button */
+.btn-label {
+    font-family: 'Pangolin', cursive;
+    color: #70585d;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* The actual button - a clean circular token containing only the 🐶 head */
+.circular-dog-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    width: 60px;
+    height: 60px;
     background: #e07b93;
-    color: white;
+    border-radius: 50%;
+    font-size: 2rem; /* Big, adorable dog head emoji */
     text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    box-shadow: 0 8px 20px rgba(224, 123, 147, 0.4);
+    box-shadow: 0 6px 15px rgba(224, 123, 147, 0.35);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
 
-/* Cute Pop Animation for the Dog Head Emoji */
-.dog-head {
-    font-size: 1.6rem;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.btn:hover {
+/* Playful bounce and head-tilt animation when hovering over the dog */
+.circular-dog-btn:hover {
     background: #d15c77;
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 25px rgba(224, 123, 147, 0.5);
+    transform: translateY(-4px) scale(1.1) rotate(-15deg);
+    box-shadow: 0 10px 20px rgba(224, 123, 147, 0.45);
 }
 
-.btn:hover .dog-head {
-    transform: rotate(-15deg) scale(1.2); /* Dog tilts its head playfully on hover */
+.circular-dog-btn:active {
+    transform: translateY(-1px) scale(0.95);
 }
 
-/* --- Highly Visible Massive Streaming Hearts Array --- */
+/* --- Streaming Floating Hearts Area --- */
 .heart-bg {
     position: absolute;
     width: 100%;
