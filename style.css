@@ -1,4 +1,4 @@
-/* Reset basic margins */
+/* Reset and Default Setup */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +6,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Page Background Setup */
+/* Soft, Low-Saturated Pastel Pink Background */
 body {
     height: 100vh;
     width: 100%;
-    /* Soft pink romantic gradient background */
-    background: linear-gradient(135deg, #ffe0f0 0%, #ffc1e3 100%);
+    background-color: #fff2f6; /* Very gentle, easy-on-the-eyes pastel base */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,126 +19,124 @@ body {
     position: relative;
 }
 
-/* Optional soft string light aesthetic overlay */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.4) 15%, transparent 16%);
-    background-size: 60px 60px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-/* Glassmorphism Card Container */
+/* Glassmorphism Card Container (Cozy & Minimal) */
 .container {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 35px 25px;
     border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.15);
-    max-width: 480px;
+    box-shadow: 0 10px 30px rgba(220, 170, 185, 0.15);
+    max-width: 440px;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    animation: fadeIn 1.5s ease-out forwards;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    z-index: 2; /* Keeps text above background elements */
+    animation: fadeIn 1.2s ease-out forwards;
 }
 
-/* Avatar Layout */
+/* Header Image Setup */
 .avatar-container {
     position: relative;
     display: inline-block;
-    margin-bottom: 15px;
-    width: 100%;
+    margin-bottom: 10px;
+    width: 100%; 
 }
 
 .avatar {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px; 
     height: auto;
-    border-radius: 12px;
+    border-radius: 12px; 
     object-fit: contain;
-    box-shadow: none;
 }
 
-.floating-heart {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 24px;
-    animation: pulse 1.5s infinite alternate;
-}
-
-/* Typography styles */
+/* Typography Customizations */
 h1 {
-    font-family: 'Playfair Display', serif;
-    color: #4a0033;
-    font-size: 2rem;
-    line-height: 1.3;
+    font-family: 'Dancing Script', cursive; /* Handwritten Script Font */
+    color: #4a343a;
+    font-size: 2.6rem;
+    line-height: 1.1;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .highlight {
-    font-style: italic;
-    color: #d81b60;
+    color: #cca43b; /* Cozy muted yellow/gold to complement the emojis */
 }
 
 .message {
-    color: #5c3a4f;
+    color: #615055;
     font-size: 1.05rem;
     line-height: 1.6;
-    margin-bottom: 15px;
-    font-weight: 300;
-}
-
-.declaration {
-    color: #4a0033;
-    font-weight: 600;
-    font-size: 1.1rem;
     margin-bottom: 25px;
+    font-weight: 400;
+    padding: 0 10px;
 }
 
-/* Romantic Call To Action Button */
+/* Pastel/Muted Aesthetic Button */
 .btn {
     display: inline-block;
-    background: #ff4081;
+    background: #e5a4b6; /* Muted pastel pink */
     color: white;
     text-decoration: none;
-    padding: 14px 32px;
+    padding: 12px 28px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 15px rgba(229, 164, 182, 0.4);
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #f50057;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(255, 64, 129, 0.5);
+    background: #db93a7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(229, 164, 182, 0.5);
 }
 
-.btn:active {
-    transform: translateY(-1px);
+/* --- Animated Floating Hearts Section --- */
+.heart-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* Animations */
+.heart {
+    position: absolute;
+    bottom: -5%;
+    opacity: 0;
+    animation: floatUp 15s linear infinite;
+}
+
+/* Calm, Ultra-Slow Float Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.4; /* Muted visibility so it's not distracting */
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(50px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes pulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.2); }
 }
