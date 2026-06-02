@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     width: 100%;
-    /* Points straight to your uploaded file named bg.jpg with a slight pink tint overlay */
+    /* Pulls directly from your uploaded bg.jpg with a slight romantic overlay */
     background-image: linear-gradient(rgba(255, 240, 245, 0.25), rgba(255, 240, 245, 0.25)), url('bg.jpg');
     background-size: cover;
     background-position: center;
@@ -20,7 +20,7 @@ body {
     font-family: 'Pangolin', cursive;
 }
 
-/* Glassmorphism card block container */
+/* Glassmorphism main card module */
 .container {
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
@@ -49,74 +49,74 @@ body {
     object-fit: contain;
 }
 
-/* Great Vibes Script Cursive Heading */
+/* Elegant looping Ms Madi cursive script style */
 h1.cursive-heading {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Ms Madi', cursive;
     color: #c74d6e; 
-    font-size: 3.4rem; 
-    line-height: 1.2;
-    margin-bottom: 12px;
+    font-size: 3.8rem; /* Script faces need large rendering heights to show flourishes */
+    line-height: 1.1;
+    margin-bottom: 15px;
     font-weight: normal;
 }
 
-/* Small message format under title */
+/* Custom scaled down, regular-weight (NOT BOLD) body text style */
 .message {
     font-family: 'Pangolin', cursive;
-    color: #423336;
+    color: #594549; /* Softer graphite gray tone rather than heavy dark black */
     font-size: 0.85rem; 
     line-height: 1.5;
     margin-bottom: 25px;
-    font-weight: bold; 
+    font-weight: normal; /* Completely removes the bold style formatting */
     text-transform: uppercase; 
     letter-spacing: 0.8px;
     padding: 0 15px;
 }
 
-/* Container to vertically stack text and dog head */
+/* Layout stack: alignment system for dog node configuration */
 .dog-button-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    margin-bottom: 5px;
+    gap: 8px;
+    margin-top: 5px;
 }
 
-/* Small instruction text above dog button */
-.btn-label {
-    font-family: 'Pangolin', cursive;
-    color: #70585d;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* The actual button - a clean circular token containing only the 🐶 head */
+/* The actual big circular 🐶 head link token button */
 .circular-dog-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 75px;  /* Enlarged from 60px to make it prominent */
+    height: 75px; /* Enlarged from 60px to make it prominent */
     background: #e07b93;
     border-radius: 50%;
-    font-size: 2rem; /* Big, adorable dog head emoji */
+    font-size: 2.5rem; /* Large, bold puppy face display */
     text-decoration: none;
     box-shadow: 0 6px 15px rgba(224, 123, 147, 0.35);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
-/* Playful bounce and head-tilt animation when hovering over the dog */
+/* Playful head-tilt bounce on mouse over */
 .circular-dog-btn:hover {
     background: #d15c77;
-    transform: translateY(-4px) scale(1.1) rotate(-15deg);
+    transform: translateY(-4px) scale(1.08) rotate(-15deg);
     box-shadow: 0 10px 20px rgba(224, 123, 147, 0.45);
 }
 
 .circular-dog-btn:active {
     transform: translateY(-1px) scale(0.95);
+}
+
+/* Small labels sitting beneath the button module */
+.btn-label {
+    font-family: 'Pangolin', cursive;
+    color: #7a6267;
+    font-size: 0.78rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* --- Streaming Floating Hearts Area --- */
