@@ -20,24 +20,32 @@ body {
     font-family: 'Pangolin', cursive;
 }
 
-/* Glassmorphism main card module */
-.container {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* Soft Paper Aesthetic Card Container Box */
+.container.paper-box {
+    /* Uses a textured off-white warm paper tone */
+    background-color: #faf8f5;
+    /* Soft noise pattern simulation overlay to look like heavy fiber paper cardstock */
+    background-image: radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0);
+    background-size: 4px 4px;
+    
     padding: 35px 25px;
-    border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(180, 100, 120, 0.25);
-    max-width: 440px;
+    border-radius: 12px; /* Less rounded corner for a traditional postcard/paper feel */
+    /* Double layered shadows to mimic thick deckled artistic paper resting on top of a surface */
+    box-shadow: 
+        0 1px 3px rgba(0,0,0,0.05),
+        0 10px 30px rgba(90, 70, 75, 0.12),
+        inset 0 0 40px rgba(255,255,255,0.6);
+    
+    max-width: 420px;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(230, 225, 220, 0.8);
     z-index: 5;
     animation: scaleUpCard 1s ease-out forwards;
 }
 
 .avatar-container {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     width: 100%; 
 }
 
@@ -45,28 +53,29 @@ body {
     width: 100%;
     max-width: 380px; 
     height: auto;
-    border-radius: 16px; 
+    border-radius: 8px; /* Matching the structural clean edge lines of raw paper cardstock */
     object-fit: contain;
 }
 
-/* Elegant looping Ms Madi cursive script style */
+/* Beautiful Allura Cursive Script Styling (Scaled down proportionally) */
 h1.cursive-heading {
-    font-family: 'Ms Madi', cursive;
-    color: #c74d6e; 
-    font-size: 3.8rem; /* Script faces need large rendering heights to show flourishes */
-    line-height: 1.1;
+    font-family: 'Allura', cursive;
+    color: #b33b58; /* Muted, artistic matte crimson rose tone */
+    font-size: 2.8rem; /* Scaled down significantly so it is not too big on the screen */
+    line-height: 1.2;
     margin-bottom: 15px;
     font-weight: normal;
+    letter-spacing: 0.5px;
 }
 
-/* Custom scaled down, regular-weight (NOT BOLD) body text style */
+/* Perfected mini, non-bold capital text presentation block */
 .message {
     font-family: 'Pangolin', cursive;
-    color: #594549; /* Softer graphite gray tone rather than heavy dark black */
+    color: #594549; 
     font-size: 0.85rem; 
     line-height: 1.5;
     margin-bottom: 25px;
-    font-weight: normal; /* Completely removes the bold style formatting */
+    font-weight: normal; 
     text-transform: uppercase; 
     letter-spacing: 0.8px;
     padding: 0 15px;
@@ -87,11 +96,11 @@ h1.cursive-heading {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 75px;  /* Enlarged from 60px to make it prominent */
-    height: 75px; /* Enlarged from 60px to make it prominent */
+    width: 75px;  
+    height: 75px; 
     background: #e07b93;
     border-radius: 50%;
-    font-size: 2.5rem; /* Large, bold puppy face display */
+    font-size: 2.5rem; 
     text-decoration: none;
     box-shadow: 0 6px 15px rgba(224, 123, 147, 0.35);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
