@@ -35,29 +35,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.35);
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999;
+            z-index: 9999;
         }
 
         .envelope-card {
             background: #fffaf7;
-            padding: 25px 30px;
-            border-radius: 20px;
+            padding: 40px 50px;
+            border-radius: 30px;
             text-align: center;
             cursor: pointer;
-            font-size: 4rem;
+            font-size: 7rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             animation: floatEnvelope 2s ease-in-out infinite;
         }
         
         .envelope-text {
-            font-size: 0.9rem;
+            font-size: 1.3rem;
             font-family: 'Poppins', sans-serif;
             color: #7a6267;
-            margin-top: 10px;
+            margin-top: 12px;
+            font-weight: 600;
         }
 
         @keyframes floatEnvelope {
@@ -346,8 +349,11 @@ const overlay = document.getElementById("envelopeOverlay");
 const music = document.getElementById("bgMusic");
 
 envelope.addEventListener("click", function () {
-    overlay.style.display = "none";
+
+    music.currentTime = 0;
     music.play();
+
+    overlay.style.display = "none";
 });
     
 </script>
