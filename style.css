@@ -1,16 +1,16 @@
-/* Reset and Default Setup */
+/* Core Layout Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Soft, Low-Saturated Pastel Pink Background */
+/* Base Canvas Styling */
 body {
     height: 100vh;
     width: 100%;
-    background-color: #fff2f6; /* Very gentle, easy-on-the-eyes pastel base */
+    background-color: #fff0f5; /* Cozy pastel blush pink */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,82 +19,79 @@ body {
     position: relative;
 }
 
-/* Glassmorphism Card Container (Cozy & Minimal) */
+/* Main Minimal Love Card Container */
 .container {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 35px 25px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(220, 170, 185, 0.15);
-    max-width: 440px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(224, 140, 162, 0.2);
+    max-width: 450px;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    z-index: 2; /* Keeps text above background elements */
-    animation: fadeIn 1.2s ease-out forwards;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 5;
+    animation: scaleUpCard 1s ease-out forwards;
 }
 
-/* Header Image Setup */
+/* Header Graphic Container */
 .avatar-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%; 
 }
 
 .avatar {
     width: 100%;
-    max-width: 380px; 
+    max-width: 390px; 
     height: auto;
-    border-radius: 12px; 
+    border-radius: 16px; 
     object-fit: contain;
 }
 
-/* Typography Customizations */
+/* Aesthetic Cursive Heading (Same color throughout) */
 h1 {
-    font-family: 'Dancing Script', cursive; /* Handwritten Script Font */
-    color: #4a343a;
-    font-size: 2.6rem;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-family: 'Playball', cursive;
+    color: #c74d6e; /* Sweet, solid raspberry rose color */
+    font-size: 2.7rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
-.highlight {
-    color: #cca43b; /* Cozy muted yellow/gold to complement the emojis */
-}
-
+/* Expressive Bold Body Message */
 .message {
-    color: #615055;
-    font-size: 1.05rem;
+    color: #4a3b3e;
+    font-size: 1.15rem;
     line-height: 1.6;
-    margin-bottom: 25px;
-    font-weight: 400;
-    padding: 0 10px;
+    margin-bottom: 30px;
+    font-weight: 600; /* Bolded weight for extra emphasis */
+    letter-spacing: -0.2px;
+    padding: 0 5px;
 }
 
-/* Pastel/Muted Aesthetic Button */
+/* Romantic Call to Action Button */
 .btn {
     display: inline-block;
-    background: #e5a4b6; /* Muted pastel pink */
+    background: #e07b93;
     color: white;
     text-decoration: none;
-    padding: 12px 28px;
+    padding: 14px 35px;
     border-radius: 50px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    box-shadow: 0 5px 15px rgba(229, 164, 182, 0.4);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(224, 123, 147, 0.4);
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #db93a7;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(229, 164, 182, 0.5);
+    background: #d15c77;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(224, 123, 147, 0.5);
 }
 
-/* --- Animated Floating Hearts Section --- */
+/* --- Highly Visible Floating Hearts System --- */
 .heart-bg {
     position: absolute;
     width: 100%;
@@ -105,38 +102,39 @@ h1 {
     pointer-events: none;
 }
 
-.heart {
+.roaming-heart {
     position: absolute;
-    bottom: -5%;
+    bottom: -10%;
+    font-size: 24px; /* Increased size to make them highly visible */
     opacity: 0;
-    animation: floatUp 15s linear infinite;
+    animation: scrollHeartsUp linear infinite;
 }
 
-/* Calm, Ultra-Slow Float Animation */
-@keyframes floatUp {
+/* Roaming Motion Script */
+@keyframes scrollHeartsUp {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg);
         opacity: 0;
     }
     10% {
-        opacity: 0.4; /* Muted visibility so it's not distracting */
+        opacity: 0.75; /* Highly visible roaming density */
     }
     90% {
-        opacity: 0.4;
+        opacity: 0.75;
     }
     100% {
-        transform: translateY(-110vh) translateX(50px) rotate(45deg);
+        transform: translateY(-115vh) translateX(60px) rotate(35deg);
         opacity: 0;
     }
 }
 
-@keyframes fadeIn {
+@keyframes scaleUpCard {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: scale(0.95) translateY(10px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1) translateY(0);
     }
 }
