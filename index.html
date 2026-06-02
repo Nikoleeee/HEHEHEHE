@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Monthsary, My Love! ❤️</title>
-    <!-- Importing Poppins & Playfair Display Google Fonts -->
+    <title>Happy Monthsary, My Lovey! ❤️</title>
+    <!-- Importing Dancing Script (Handwritten) & Poppins (Clean Body Text) -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Subtle, slow-moving floating hearts in the background -->
+    <div class="heart-bg">
+        <div class="heart" style="left: 10%; animation-delay: 0s; font-size: 14px;">💛</div>
+        <div class="heart" style="left: 25%; animation-delay: 4s; font-size: 18px;">🤍</div>
+        <div class="heart" style="left: 40%; animation-delay: 2s; font-size: 12px;">💛</div>
+        <div class="heart" style="left: 55%; animation-delay: 6s; font-size: 16px;">🤍</div>
+        <div class="heart" style="left: 70%; animation-delay: 1s; font-size: 15px;">💛</div>
+        <div class="heart" style="left: 85%; animation-delay: 5s; font-size: 13px;">🤍</div>
+    </div>
+
     <div class="container">
-        <!-- This is your updated image tag section for the couple graphic -->
+        <!-- Couple Graphic Header -->
         <div class="avatar-container">
             <img src="couple-art.png" alt="Love" class="avatar">
-            <span class="floating-heart">❤️</span>
         </div>
 
-        <h1>Happy Monthsary, <br><span class="highlight">My Love! 💕</span></h1>
+        <h1>Happy Monthsary, <br><span class="highlight">My Love!</span></h1>
         
+        <!-- Your custom personalized message -->
         <p class="message">
-            Every day with you feels like a beautiful dream come true. 
-            Thank you for being my happiness, my peace, and my home.
+            33 months of us, and yet di ka pa rin umaalis like?? choice mo na to beh 😌💛
         </p>
-        
-        <p class="declaration">I love you so much! 💞</p>
 
-        <!-- Change '#' to your second page link or love letter link later -->
+        <!-- Clickable button -->
         <a href="#" class="btn" id="loveBtn">❤️ Click here, love!</a>
     </div>
 
-    <!-- Optional JavaScript for a fun heart burst effect when clicked -->
     <script>
         document.getElementById('loveBtn').addEventListener('click', function(e) {
             if(this.getAttribute('href') === '#') {
                 e.preventDefault();
-                alert("Happy Monthsary! I love you to the moon and back! 🌙✨");
+                alert("Happy 33rd Monthsary! Sabi mo 'yan ah, bawal na bawiin! 🫶✨");
             }
         });
     </script>
