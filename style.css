@@ -7,8 +7,8 @@
 body {
     height: 100vh;
     width: 100%;
-    /* High resolution pastel gradient pink sky image backdrop */
-    background-image: url('https://unsplash.com');
+    /* Points straight to your uploaded file named sky-bg.jpg */
+    background-image: url('sky-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
