@@ -7,7 +7,9 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: #fff0f5; 
+    background-image: linear-gradient(rgba(255, 240, 245, 0.4), rgba(255, 240, 245, 0.4)), url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,16 +20,16 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 40px 30px;
     border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(224, 140, 162, 0.2);
+    box-shadow: 0 15px 35px rgba(180, 100, 120, 0.3);
     max-width: 450px;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     z-index: 5;
     animation: scaleUpCard 1s ease-out forwards;
 }
@@ -54,41 +56,55 @@ h1 {
     font-weight: 700;
 }
 
-/* Customized Message: Uses Pangolin, Forced All Caps, Extra Bold Vibe */
 .message {
     font-family: 'Pangolin', cursive;
     color: #3b2d30;
-    font-size: 1.25rem; /* Increased size to make handwriting pop */
+    font-size: 1.25rem; 
     line-height: 1.6;
     margin-bottom: 30px;
     font-weight: bold; 
-    text-transform: uppercase; /* Automatically forces ALL CAPITAL LETTERS */
+    text-transform: uppercase; 
     letter-spacing: 0.5px;
     padding: 0 5px;
 }
 
+/* Re-styled Custom Dog Theme Button Container */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background: #e07b93;
     color: white;
     text-decoration: none;
-    padding: 14px 35px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.5px;
     box-shadow: 0 8px 20px rgba(224, 123, 147, 0.4);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Cute Pop Animation for the Dog Head Emoji */
+.dog-head {
+    font-size: 1.6rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .btn:hover {
     background: #d15c77;
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 12px 25px rgba(224, 123, 147, 0.5);
 }
 
-/* --- Heavily Visible Floating Hearts --- */
+.btn:hover .dog-head {
+    transform: rotate(-15deg) scale(1.2); /* Dog tilts its head playfully on hover */
+}
+
+/* --- Highly Visible Massive Streaming Hearts Array --- */
 .heart-bg {
     position: absolute;
     width: 100%;
@@ -102,7 +118,7 @@ h1 {
 .roaming-heart {
     position: absolute;
     bottom: -10%;
-    font-size: 28px; /* Bigger presence */
+    font-size: 32px; 
     opacity: 0;
     animation: scrollHeartsUp linear infinite;
 }
@@ -113,13 +129,13 @@ h1 {
         opacity: 0;
     }
     10% {
-        opacity: 0.9; /* Bright and beautiful visible opacity */
+        opacity: 0.95; 
     }
     90% {
-        opacity: 0.9;
+        opacity: 0.95;
     }
     100% {
-        transform: translateY(-115vh) translateX(80px) rotate(45deg);
+        transform: translateY(-115vh) translateX(90px) rotate(45deg);
         opacity: 0;
     }
 }
