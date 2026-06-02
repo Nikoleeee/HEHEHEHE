@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Story - Page 2 ❤️</title>
 
-    <!-- Google Fonts Framework -->
     <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
@@ -72,16 +71,8 @@
             border-radius: 50% 50% 40% 50%;
         }
 
-        .loop-left {
-            left: 4px;
-            transform: rotate(-15deg);
-        }
-
-        .loop-right {
-            right: 4px;
-            border-radius: 50% 50% 50% 40%;
-            transform: rotate(15deg);
-        }
+        .loop-left { left: 4px; transform: rotate(-15deg); }
+        .loop-right { right: 4px; border-radius: 50% 50% 50% 40%; transform: rotate(15deg); }
 
         .cursive-heading {
             font-family: 'Dancing Script', cursive;
@@ -101,7 +92,6 @@
             padding: 0 5px;
         }
 
-        /* GAME */
         .game-box {
             background: rgba(255, 245, 247, 0.7);
             border: 2px dashed #e5a4b6;
@@ -151,7 +141,42 @@
             color: #8c7378;
         }
 
-        /* particles */
+        .hidden-btn-wrapper {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            animation: scaleUpCard 0.5s ease-out forwards;
+        }
+
+        .circular-dog-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 75px;
+            background: #e07b93;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(224, 123, 147, 0.35);
+            cursor: pointer;
+        }
+
+        .circular-dog-btn:hover {
+            background: #d15771;
+            transform: translateY(-4px) scale(1.08) rotate(-15deg);
+        }
+
+        .btn-label {
+            font-family: 'Poppins', sans-serif;
+            color: #7a6267;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
         .burst-heart-particle {
             position: absolute;
             pointer-events: none;
@@ -160,14 +185,35 @@
         }
 
         @keyframes shootOutAndFade {
-            0% {
-                transform: translate(-50%, -50%) scale(0.3);
-                opacity: 1;
-            }
+            0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
             100% {
                 transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.1) rotate(var(--r));
                 opacity: 0;
             }
+        }
+
+        .heart-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .roaming-heart {
+            position: absolute;
+            bottom: -10%;
+            font-size: 32px;
+            opacity: 0;
+            animation: scrollHeartsUp linear infinite;
+        }
+
+        @keyframes scrollHeartsUp {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.95; }
+            100% { transform: translateY(-115vh); opacity: 0; }
         }
 
         @keyframes scaleUpCard {
@@ -178,6 +224,11 @@
 </head>
 
 <body>
+
+<div class="heart-bg">
+    <div class="roaming-heart" style="left: 3%; animation-duration: 6s;">💛</div>
+    <div class="roaming-heart" style="left: 8%; animation-duration: 9s;">❤️</div>
+</div>
 
 <div class="container">
 
@@ -193,21 +244,20 @@
 To my favorite person, Happy 33rd monthsary! I want to take this page to tell you how incredibly grateful I am to have you in my life. Thank you for making me happy, for being my safe space, and for staying by my side through everything. Every single day with you is a beautiful dream come true, and I look forward to making even more memories together. I love you to the moon and back! 💕 SPAM FOR 33 MONTHS IF U LOVE ME hihi 💛❤️
     </p>
 
-    <!-- LOVE METER -->
     <div class="game-box" id="gameArea">
 
         <div class="game-title" id="gameHeader">
-            SPAM FOR 33 MONTHS IF U LOVE ME 💛❤️
+            SPAM FOR 33 MONTHS IF U LOVE ME hihi 💛❤️
         </div>
 
         <div class="progress-bar">
             <div class="progress-fill" id="loveFill"></div>
         </div>
 
-        <div class="click-target" id="heartTarget">🐶</div>
+        <div class="click-target" id="heartTarget">❤️</div>
 
         <div class="counter-status" id="clickCount">
-            Clicks needed: 33
+            Clicks needed: 33🐶See Our Memories
         </div>
 
     </div>
@@ -253,12 +303,11 @@ heart.addEventListener("click", function(e) {
             particle.style.setProperty("--r", (Math.random() * 360) + "deg");
 
             gameArea.appendChild(particle);
-
             setTimeout(() => particle.remove(), 600);
         }
 
         if (clicks === totalNeeded) {
-            header.innerHTML = "LOVE FULLY LOADED! 🎉 I LOVE YOU SO MUCH!";
+            header.innerHTML = "LOVE FULLY LOADED! 🎉I LOVE YOU SO MUCH!";
             text.innerText = "YAY! YOU UNLOCKED OUR GALLERY!";
             heart.style.display = "none";
         }
